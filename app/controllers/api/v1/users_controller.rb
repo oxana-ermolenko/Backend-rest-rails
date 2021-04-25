@@ -29,7 +29,7 @@ class Api::V1::UsersController < ApplicationController
   def update
     # your code godes here
     if @user.update_attributes(user_params)
-      render json: @user, status: 200
+      render json: { message: 'User successully updated.'}, status: 200
     else
       render json: {error:
       "Unable to update user: #{@user.errors.full_messages.to_sentence}"},
